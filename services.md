@@ -8,3 +8,6 @@
       
       4.  Any Pod create in future is added to service dynamicaly if pod label is matching with Service lable selector.
         service
+        
+        
+        
