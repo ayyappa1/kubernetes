@@ -15,11 +15,11 @@ Get the file (pod.yml)
           spec:
             containers:
               - name: nodeapp
-                image: kammana/nodeapp:v1
+                image: dev/nodeapp:v1
                 ports:
                   - containerPort: 8080
                   
-          $ kubectl create -f https://raw.githubusercontent.com/javahometech/kubernetes/master/pods/pods.yml
+          $ kubectl create -f pods.yml
           
 # Command to get all pods
 
