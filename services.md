@@ -9,5 +9,14 @@
       4.  Any Pod create in future is added to service dynamicaly if pod label is matching with Service lable selector.
         service
         
-        
+    # service yml  
+    
+                  apiVersion: v1
+                  kind: Service
+                  metadata:
+                     name: Tutorial_point_service
+                  spec:
+                     ports:
+                     - port: 8080
+                     targetPort: 31999
         
