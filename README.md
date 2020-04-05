@@ -26,12 +26,12 @@ Kubernetes on AWS using Kops
 
           S3 bucket is used by kubernetes to persist cluster state, lets create s3 bucket using aws cli Note: Make sure you choose bucket name that is uniqe accross all aws accounts
 
-          aws s3 mb s3://javahome.in.k8s --region ap-south-1
+          aws s3 mb s3://kopshome.in.k8s --region ap-south-1
       
 6. Create private hosted zone in AWS Route53
 
           1  Head over to aws Route53 and create hostedzone
-          2  Choose name for example (javahome.in)
+          2  Choose name for example (kopshome.in)
           3  Choose type as privated hosted zone for VPC
           4 Select default vpc in the region you are setting up your cluster
           5  Hit create
@@ -43,8 +43,8 @@ Open .bashrc file
           
 Add following content into .bashrc, you can choose any arbitary name for cluster and make sure buck name matches the one you created in previous step.
 
-        export KOPS_CLUSTER_NAME=javahome.in
-        export KOPS_STATE_STORE=s3://javahome.in.k8s
+        export KOPS_CLUSTER_NAME=kopshome.in
+        export KOPS_STATE_STORE=s3://kopshome.in.k8s
         
 Then running command to reflect variables added to .bashrc
 
@@ -54,6 +54,8 @@ Then running command to reflect variables added to .bashrc
 This keypair is used for ssh into kubernetes cluster
 
         ssh-keygen
+        
+        kops create secret --name kopshome.in sshpublickey admin -i ~/.ssh/y.pub
         
 9. Create a Kubernetes cluster definition.
 
