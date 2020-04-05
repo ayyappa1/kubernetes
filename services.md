@@ -20,3 +20,8 @@
                      - port: 8080
                      targetPort: 31999
         
+# Types of Services
+
+ClusterIP − This helps in restricting the service within the cluster. It exposes the service within the defined Kubernetes cluster.
+NodePort − It will expose the service on a static port on the deployed node. 
+Load Balancer − It uses cloud providers’ load balancer
